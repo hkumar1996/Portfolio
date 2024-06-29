@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = htmlspecialchars($_POST['message']);
 
     // Your email address where you want to receive the emails
-    $to = "hemanthsri1996@gmail.com";  
+    $to = "hemanthkumarchelakacherla@gmail.com";  
     $subject = "New Hire Request";
     $body = "Name: $name\nEmail: $email\nMessage: $message";
     $headers = "From: $email";
