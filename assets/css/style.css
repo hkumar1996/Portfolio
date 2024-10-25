@@ -575,3 +575,8 @@ a.icon-up-bg:hover {color: #212121;}
     color: #fff;
     text-align: center;
 }
+#msg{
+  colour: #61b752;
+  margin-top: -40px;
+  display: block
+}
