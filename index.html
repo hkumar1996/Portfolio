@@ -296,7 +296,7 @@
 
                 <h3>Contact</h3>
                 <img src="assets/img/lines.svg" class="img-lines" alt="lines">
-                <form id="hireform" action="assets\php\send-email.php" method="post">
+                <form name= "submit-to-google-sheet">
                     <div class="row">
                         <div class="col-sm-6">
                             <input type="text" name="Name" class="form-control mt-x-0" placeholder="Name" required>
@@ -453,6 +453,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js"></script>
     <script src="assets/js/jquery.countTo.min.js"></script>
     <script src="assets/js/script.js"></script>
-  
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbycOZGqWXAKTf9xh_ro03_l3qAE1cb5yH0nWIz3YfHVgCzjdwe-HWSDmVYXQjI9U4Stfw/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
